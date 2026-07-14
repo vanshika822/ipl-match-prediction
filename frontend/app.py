@@ -353,7 +353,7 @@ with tab3:
             }
 
             response = requests.post(
-                "https://ipl-match-prediction-0i3k.onrender.com",
+                "https://ipl-match-prediction-0i3k.onrender.com/predict",
                 json=payload
             )
             winner = response.json()["predicted_winner"]
@@ -363,42 +363,7 @@ with tab3:
 
         except Exception as e:
             st.error(f"Error: {e} — Please check your inputs!")
-    # if st.button("🏆 Predict Winner"):
-    #     try:
-              
-
-
-        #     input_dict = {
-        #         'team1': p_team1,
-        #         'team2': p_team2,
-        #         'venue': p_venue,
-        #         'temperature': p_temp,
-        #         'rainfall': p_rain,
-        #         'toss_winner': p_toss_winner,
-        #         'toss_decision': p_toss_decision,
-        #         'season': int(p_season),
-        #         'city': p_city
-        #  }
-        #     input_df = pd.DataFrame([input_dict])
-        
-        #     categorical_cols = ['team1', 'team2', 'venue', 'toss_winner', 'toss_decision', 'city']
-        #     for col in categorical_cols:
-        #         input_df[col] = encoders[col].transform(input_df[col].astype(str))
-
-        
-        #     expected_order = ['team1', 'team2', 'venue', 'temperature', 'rainfall',
-        #                    'toss_winner', 'toss_decision', 'season', 'city']
-        #     input_df = input_df[expected_order]
-        
-        #     prediction = model.predict(input_df)
-        #     winner = encoders['winner'].inverse_transform(prediction)[0]
-        
-        #     st.success(f"🏆 Predicted Winner: **{winner}**")
-        #     st.balloons()
-        
-        # except Exception as e:
-        #     st.error(f"Error: {e} — Please check your inputs!")
-
+   
 
 
 
