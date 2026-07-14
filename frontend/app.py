@@ -353,7 +353,7 @@ with tab3:
             }
 
             response = requests.post(
-                "https://ipl-backend-XXXX.onrender.com/predict",
+                "https://ipl-match-prediction-0i3k.onrender.com",
                 json=payload
             )
             winner = response.json()["predicted_winner"]
