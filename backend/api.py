@@ -32,7 +32,8 @@ def predict(data: MatchInput):
 
     categorical_cols = ['team1', 'team2', 'venue', 'toss_winner', 'toss_decision', 'city']
     for col in categorical_cols:
-        input_df[col] = encoders[col].transform(input_df[col].astype(str))
+        input_df[col] = input_df[col].astype(str).str.strip()
+        input_df[col] = encoders[col].transform(input_df[col])
 
     expected_order = ['team1', 'team2', 'venue', 'temperature', 'rainfall',
                        'toss_winner', 'toss_decision', 'season', 'city']
